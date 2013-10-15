@@ -1,5 +1,7 @@
 # Twitter LTI Tool
 
+[![Gem Version](https://badge.fury.io/rb/inst_lti_twitter.png)](http://badge.fury.io/rb/inst_lti_twitter)
+
 Embed a Twitter widget into your LMS with this LTI App.
 
 ### Usage
