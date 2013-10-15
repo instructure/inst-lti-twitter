@@ -7,7 +7,7 @@ Embed a Twitter widget into your LMS with this LTI App.
 This gem is a mountable Rails engine. To use this you will need to include the gem into a Rails application then mount the engine in the routes file. Example:
 
     # Gemfile
-    gem "inst-lti-twitter", "~> 0.0.1"
+    gem "inst_lti_twitter", "~> 0.0.1"
 
     # routes.rb
     mount InstLtiTwitter::Engine, at: "/twitter"
