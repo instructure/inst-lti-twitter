@@ -1,0 +1,125 @@
+<div id="wrapper">
+  <div id="header">
+    <h3>
+      {{headerTitle}}
+    </h3>
+  </div>
+    
+  <!-- Tweet List -->
+  <div id="list" ng-show="currentPage == 'list'">
+    <div class="row" id="list">
+      <div class="col-xs-12">
+        <div id="empty-results" ng-show="tweets.length == 0">
+          No recent tweets found.
+        </div>
+        <table class="table" ng-show="tweets.length > 0" style="margin-bottom: 0px;">
+          <tr class="tweet-item" ng-repeat="tweet in tweets">
+            <td width="64" style="width: 64px;" class="text-center">
+              <img class="tweet-avatar" 
+                   alt="{{tweet.user.name}}" src="{{tweet.user.profile_image_url}}" height="64" width="64">
+            </td>
+            <td>
+              <h5 class="tweet-name">
+                <span class="time-ago">{{tweet.created_at|timeAgo}}</span>
+                {{tweet.user.name}}
+                <small>@{{tweet.user.screen_name}}</small>
+              </h5>
+              <p class="tweet-desc">
+                {{tweet.text}}
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div id="footer" ng-show="currentPage == 'list'">
+    <div class="row">
+      <div class="col-xs-4">
+        <a href="#" ng-click="reloadTweets()" class="btn btn-sm btn-primary" eat-click><i class="icon-refresh" eat-click></i> Refresh</a>
+      </div>
+      <div class="col-xs-8 text-right" ng-hide="launchParams.embedded">
+        <a href="#" ng-click="setup()" class="btn btn-sm btn-warning" eat-click><i class="icon-edit text-right"></i> Modify Search</a>
+        <a href="#" ng-click="embed()" class="btn btn-sm btn-success" eat-click><i class="icon-download"></i> Embed</a>
+      </div>
+    </div>
+  </div>
+  <!-- / Tweet List -->
+
+  <!-- Setup -->
+  <div id="list" ng-show="currentPage == 'setup'">
+    <form role="form" ng-submit="reloadTweets()">
+      <div class="row" id="list">
+        <div class="col-xs-12">
+          <div class="padded">
+            <div class="alert alert-info">Enter either a hashtag or a twitter username below and click <span class="text-success">Preview</span>. Once you are happy with the results, click the <span class="text-success">Embed</span> button.</div>
+            <table style="width: 100%;">
+              <tr>
+                <td style="width: 47%;">
+                  <div class="form-group">
+                    <label for="hashtag" class="control-label">Hashtag</label>
+                    <div class="input-group">
+                      <span class="input-group-addon">#</span>
+                      <input type="text" ng-model="hashtag" class="form-control">
+                    </div>
+                  </div>
+                </td>
+                <td style="width: 6%; text-align: center; padding-top: 10px;">
+                  or
+                </td>
+                <td style="width: 47%;">
+                  <div class="form-group">
+                    <label for="username" class="control-label">Username</label>
+                    <div class="input-group">
+                      <span class="input-group-addon">@</span>
+                      <input type="text" ng-model="username" class="form-control">
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="form-group">
+                  <label for="max" class="control-label">Number of tweets to show</label>
+                  <select ng-model="max" ng-options="v for v in [5,10,15,20,25]" class="form-control"></select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div id="footer" ng-show="currentPage == 'setup'">
+    <div class="row">
+      <div class="col-xs-12 text-right">
+        <a href="#" ng-click="reloadTweets()" class="btn btn-sm btn-success" eat-click><i class="icon-edit text-right"></i> Preview</a>
+      </div>
+    </div>
+  </div>
+  <!-- / Setup -->
+
+  <!-- Embed -->
+  <div id="list" ng-show="currentPage == 'embed'">
+    <div class="row" id="list">
+      <div class="col-xs-12">
+        <div class="padded">
+          <p>You're not in a system that supports auto-inserting content, so you'll need to copy and past the following code by hand in order to insert it into your content.</p>
+
+          <textarea class="form-control" rows="6"><iframe src="{{embedData.url}}" title="{{embedData.title}}" width="{{embedData.width}}" height="{{embedData.height}}" /></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="footer" ng-show="currentPage == 'embed'">
+    <div class="row">
+      <div class="col-xs-12 text-right">
+        <a href="#" ng-click="setup()" class="btn btn-sm btn-warning" eat-click><i class="icon-edit text-right"></i> Modify Search</a>
+      </div>
+    </div>
+  </div>
+  <!-- / Embed -->
+
+</div>
+

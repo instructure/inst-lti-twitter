@@ -1,0 +1,59 @@
+#wrapper {
+  border: 3px solid #ddd;
+  border-radius: 3px;
+  max-width: 560px;
+  min-width: 360px;
+}
+#header {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+#header h3 {
+  margin: 0px;
+  font-size: 16px;
+  background: url('<%= asset_path("twitter_lti/icon_large.png") %>') right -7px no-repeat;
+}
+#list {
+  overflow: auto;
+  height: 360px;
+}
+.tweet-item td {
+  padding: 0px;
+}
+.tweet-item td:hover {
+  background-color: #fafafa;
+}
+.tweet-avatar {
+  border-radius: 3px;
+}
+.tweet-name {
+  margin: 0;
+  color: #585858;
+}
+.tweet-name small {
+  font-weight: normal;
+  font-weight: 300;
+  color: #9f9f9f;
+}
+.tweet-name .time-ago {
+  text-align: right;
+  float: right;
+  font-weight: 300;
+  color: #9f9f9f;
+}
+.tweet-desc {
+  font-size: 90%;
+  margin: 0.4em 0;
+}
+#empty-results {
+  padding: 15px;
+  text-align: center;
+}
+#footer {
+  display: block;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+}
+.padded {
+  padding: 15px;
+}

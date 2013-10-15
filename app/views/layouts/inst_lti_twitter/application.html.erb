@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="App">
+<head>
+  <title>Twitter LTI</title>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <%= stylesheet_link_tag    "inst_lti_twitter/application", media: "all" %>
+  <%= javascript_include_tag "inst_lti_twitter/application" %>
+  <script type="text/javascript">
+  window.ROOT_URL = '<%= root_url %>';
+  window.LAUNCH_PARAMS = <%= raw(@launch_params.to_json) %>;
+  </script>
+</head>
+<body ng-controller="Twitter">
+<%= yield %>
+</body>
+</html>
