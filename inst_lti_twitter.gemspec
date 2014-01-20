@@ -5,7 +5,7 @@ require "inst_lti_twitter/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "inst_lti_twitter"
+  s.name        = "lti_twitter_engine"
   s.version     = InstLtiTwitter::VERSION
   s.authors     = ["Eric Berry", "Brad Humphrey"]
   s.email       = ["ericb@instructure.com", "brad@insructure.com"]
@@ -20,6 +20,5 @@ Gem::Specification.new do |s|
   s.add_dependency "twitter", "~> 5.0.0.rc.1"
   s.add_dependency "ims-lti", "~> 1.1.4"
 
-  s.add_development_dependency "pry"
   s.add_development_dependency "sqlite3" # needed to run tests
 end
