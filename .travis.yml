@@ -1,0 +1,6 @@
+language: ruby
+rvm:
+  - "2.0.0"
+before_script:
+  - cp config/inst_lti_twitter_config.yml.example spec/test_app/config/inst_lti_twitter_config.yml
+
