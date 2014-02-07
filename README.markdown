@@ -14,7 +14,7 @@ This gem is a mountable Rails engine. To use this you will need to include the g
     gem "lti_twitter_engine"
 
     # routes.rb
-    mount InstLtiTwitter::Engine, at: "/twitter"
+    mount InstLtiTwitter::Engine, at: "/twitter_lti"
 
 You will also need to create a new file in your config folder called `inst_lti_twitter_config.yml`. This will contain the credentials for using the Twitter API.
 
@@ -33,4 +33,4 @@ You will also need to create a new file in your config folder called `inst_lti_t
     production:
       <<: *default
 
-Once this is done, you should be able to go to */twitter* on your app and the LTI app will appear.
+Once this is done, you should be able to go to */twitter_lti* on your app and the LTI app will appear.
