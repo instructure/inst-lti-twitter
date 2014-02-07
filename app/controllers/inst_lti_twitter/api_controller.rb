@@ -4,6 +4,27 @@ require 'ims/lti'
 
 module InstLtiTwitter
   class ApiController < ApplicationController
+    def xml_config
+      host = "#{request.protocol}#{request.host_with_port}"
+      url = "#{host}#{root_path}"
+      title = "Twitter"
+      tool_id = "twitter_lti"
+      tc = IMS::LTI::ToolConfig.new(:title => title, :launch_url => url)
+      tc.extend IMS::LTI::Extensions::Canvas::ToolConfig
+      tc.description = "Embed a Twitter stream"
+      tc.canvas_privacy_anonymous!
+      tc.canvas_domain!(request.host)
+      tc.canvas_icon_url!("#{host}/assets/inst_lti_twitter/icon.png")
+      tc.canvas_text!(title)
+      tc.set_ext_param('canvas.instructure.com', :tool_id, tool_id)
+      tc.canvas_editor_button!(enabled: true)
+      tc.canvas_resource_selection!(enabled: true)
+      render xml: tc.to_xml
+    end
+
+    def health_check
+      head 200
+    end
 
     def tweets
       client = Twitter::REST::Client.new do |config|
@@ -72,6 +93,5 @@ module InstLtiTwitter
         return redirect_url
       end
     end
-
   end
 end

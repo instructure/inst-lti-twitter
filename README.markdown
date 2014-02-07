@@ -1,5 +1,7 @@
 # Twitter LTI Tool
 
+[![Build Status](https://travis-ci.org/instructure/inst-lti-twitter.png)](https://travis-ci.org/instructure/inst-lti-twitter)
+[![Code Climate](https://codeclimate.com/github/instructure/inst-lti-twitter.png)](https://codeclimate.com/github/instructure/inst-lti-twitter)
 [![Gem Version](https://badge.fury.io/rb/lti_twitter_engine.png)](http://badge.fury.io/rb/lti_twitter_engine)
 
 Embed a Twitter widget into your LMS with this LTI App.
