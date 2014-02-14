@@ -9,6 +9,7 @@ module InstLtiTwitter
       url = "#{host}#{root_path}"
       title = "Twitter"
       tool_id = "twitter_lti"
+      script_name = request.env['SCRIPT_NAME']
       tc = IMS::LTI::ToolConfig.new(:title => title, :launch_url => url)
       tc.extend IMS::LTI::Extensions::Canvas::ToolConfig
       tc.description = "Embed a Twitter stream"
