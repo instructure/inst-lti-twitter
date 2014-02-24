@@ -1,4 +1,6 @@
 default: &default
+  ga_code:                              GOOGLE_ANALYTICS_CODE
+  ga_domain:                            GOOGLE_ANALYTICS_DOMAIN
   inst_lti_twitter_consumer_key:        INST_LTI_TWITTER_CONSUMER_KEY
   inst_lti_twitter_consumer_secret:     INST_LTI_TWITTER_CONSUMER_SECRET
   inst_lti_twitter_access_token:        INST_LTI_TWITTER_ACCESS_TOKEN
